@@ -1,0 +1,10 @@
+Guide for setting up OpenVPN with my-private-network - https://www.my-private-network.co.uk/
+
+Create an account with my private network 
+
+Go here https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/myvpn/myvpn.sh copy all the text and paste in note pad.
+
+Line 12 change yyyy with your username and pppp with your username example /USERNAME/myuser@admin.com'/g /etc/openvpn/user.txt;sed -i -e 's/PASSWORD/1453'/g /etc/openvpn/user.txt 
+Line 13 change lower case country to a country you want the VPN server you want to connect to ie GBR for United Kingdom a list of countries here https://help.my-private-network.co.uk/support/solutions/articles/8461-which-countries-can-i-connect-to-
+
+Once you have edited your details talnet/putty the script and start openvpn on box
