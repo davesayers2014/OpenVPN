@@ -9,7 +9,7 @@ cd
 wget -O /etc/openvpn/mpnvpn.conf "https://mypn.co/files/linux/mpnvpn.ovpn" &> /dev/null 2>&1
 wget -O /etc/openvpn/user.txt "https://mypn.co/files/linux/user.txt" &> /dev/null 2>&1
 echo "Configuring OpenVPN"
-sed -i -e 's/USERNAME/yyyy'/g /etc/openvpn/user.txt;sed -i -e 's/PASSWORD/pppp'/g /etc/openvpn/user.txt && chmod 777 /etc/openvpn/user.txt &> /dev/null
-sed -i -e 's/COUNTRY/country'/g /etc/openvpn/mpnvpn.conf && chmod 777 /etc/openvpn/mpnvpn.conf &> /dev/null
+sed -i -e 's/USERNAME/xxxx'/g /etc/openvpn/user.txt;sed -i -e 's/PASSWORD/zzzz'/g /etc/openvpn/user.txt && chmod 777 /etc/openvpn/user.txt &> /dev/null
+sed -i -e 's/COUNTRY/GBR'/g /etc/openvpn/mpnvpn.conf && chmod 777 /etc/openvpn/mpnvpn.conf &> /dev/null
 exit 1
 fi
