@@ -1,1 +1,0 @@
-wget -O script.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/myvpn/myvpn.sh && sed -i 's/xxxx/yyyy'/g script.sh && sed -i 's/zzzz/pppp'/g script.sh && sed -i 's/GBR/country'/g script.sh && chmod +x script.sh && ./script.sh
