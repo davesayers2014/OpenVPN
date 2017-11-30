@@ -2,6 +2,8 @@ Guide for setting up OpenVPN with my-private-network
 
 Create an account with my private network - https://client.my-private-network.co.uk/aff.php?aff=2640
 
+Please take up on the Free 3 day tial to put the VPN to test 
+
 Go here https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/myvpn/myvpn.sh copy all the text and paste in note pad.
 
 We only need to edit lines 2 to 4
