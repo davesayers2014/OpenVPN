@@ -12,8 +12,7 @@ mkdir -p /etc/openvpn
 #echo "downloading OpenVPN"
 #cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/openvpn_2.4.3-r0.1_cortexa15hf-neon-vfpv4.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/openvpn_2.4.3-r0.1_cortexa15hf-neon-vfpv4.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing OpenVPN"
-opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
-cd
+opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Installing OpenVPN Configs"
 wget -O /etc/openvpn/mpnvpn.conf "https://mypn.co/files/linux/mpnvpn.ovpn" &> /dev/null 2>&1
 wget -O /etc/openvpn/user.txt "https://mypn.co/files/linux/user.txt" &> /dev/null 2>&1
