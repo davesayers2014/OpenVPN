@@ -11,6 +11,11 @@ rm -rv /etc/openvpn >/dev/null 2>&1
 mkdir -p /etc/openvpn
 #echo "downloading OpenVPN"
 #cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/openvpn_2.4.3-r0.1_cortexa15hf-neon-vfpv4.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/openvpn_2.4.3-r0.1_cortexa15hf-neon-vfpv4.ipk?raw=true" &> /dev/null 2>&1
+echo "downloading IP Checker"
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-ipchecker_001_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-ipchecker_001_all.ipk?raw=true" &> /dev/null 2>&1
+echo "Installing IP Checker"
+opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-ipchecker_001_all.ipk &> /dev/null 2>&1
+cd
 echo "Installing OpenVPN"
 opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Installing OpenVPN Configs"
