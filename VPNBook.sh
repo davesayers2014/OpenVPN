@@ -1,6 +1,6 @@
 #!/bin/sh
 USERNAME='USERNAME'
-PASSWORD='USERNAME'
+PASSWORD='PASSWORD'
 ###############################################################
 # Standard Config
 # If you change anything below this line, it probably wont 
