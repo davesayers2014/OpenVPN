@@ -1,5 +1,5 @@
 USERNAME='uuuu'
-PASSWORD='password'
+PASSWORD='pppp'
 ###############################################################
 # Standard Config
 # If you change anything below this line, it probably wont 
