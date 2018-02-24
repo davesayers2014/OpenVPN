@@ -35,7 +35,8 @@ echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /tmp/password.conf;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/password.conf && chmod 777 /tmp/password.conf &> /dev/null 2>&1
 find /hdd/NordVPN -type d -exec cp /tmp/password.conf {} \;
 rm -f hdd/NordVPN/password.conf /dev/null 2>&1
-rm -f /home/root/script.sh >/dev/null 2>&1
+rm -f /tmp/password.conf /dev/null 2>&1
+rm -f /home/root/Nord.sh.sh >/dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
 fi
