@@ -29,6 +29,7 @@ echo "Configuring OpenVPN"
 echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /etc/openvpn/user.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /etc/openvpn/user.txt && chmod 777 /etc/openvpn/user.txt &> /dev/null 2>&1
 sed -i -e "s/COUNTRY/$COUNTRY/g" /etc/openvpn/mpnvpn.conf && chmod 777 /etc/openvpn/mpnvpn.conf &> /dev/null 2>&1
+rm -f /home/root/script.sh >/dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
 fi

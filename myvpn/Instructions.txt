@@ -6,6 +6,9 @@ Please take up on the Free 3 day tial to put the VPN to test
 
 Go here https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/myvpn/VPN.sh copy all the text and paste in note pad.
 
+Work around for wget_1.19.3 that gives "script.sh' saved [620/620]
+-bash: ./script.sh: can not execute binary file: Exec format error" https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/myvpn/wget_1.19.3_VPN.sh
+
 We only need to edit lines 2 to 4
 
 Change line 2 uuuu with your username between the "" 
