@@ -27,7 +27,7 @@ echo $LINE
 wget -O /tmp/password.conf "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
 wget -O /hdd/NordVPN.zip "https://github.com/davesayers2014/OpenVPN/blob/master/NordVPN/NordVPN.zip?raw=true" /dev/null 2>&1
 cd /hdd
-unzip -o NordVPN.zip 2> /dev/null 2>&1
+unzip -o NordVPN.zip /dev/null 2>&1
 rm -v /hdd/NordVPN.zip /dev/null 2>&1
 cd
 echo "Configuring OpenVPN"
