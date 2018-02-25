@@ -18,7 +18,7 @@ echo "Installing VPN Changer"
 echo $LINE
 opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk &> /dev/null 2>&1
 cd
-wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/plugin.py" &> /dev/null 2>&1
+wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/plugin.py" &> /dev/null 2>&1
 echo "Installing OpenVPN"
 echo $LINE
 opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
