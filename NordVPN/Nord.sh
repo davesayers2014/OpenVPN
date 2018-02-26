@@ -1,15 +1,19 @@
 #!/bin/sh
 USERNAME='uuuu'
 PASSWORD='pppp'
-#PROVIDER='NordVPN'
+###############################################################
+# Standard Config
+# If you change anything below this line, it probably wont 
+# be able to connect to your VPN.
+################################################################
 ###############################################################
 # Standard Config
 # If you change anything below this line, it probably wont 
 # be able to connect to your VPN.
 ################################################################
 rm -rv /etc/openvpn >/dev/null 2>&1
-rm -v /hdd/NordVPN.zip 2>&1
-rm -rv /hdd/NordVPN.zip 2>&1
+rm -v /hdd/NordVPN.zip >/dev/null 2>&1
+rm -rv /hdd/NordVPN.zip >/dev/null 2>&1
 mkdir -p /etc/openvpn
 echo "downloading VPN Changer"
 echo $LINE
@@ -24,7 +28,7 @@ echo $LINE
 opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Installing OpenVPN Configs"
 echo $LINE
-wget -O /tmp/password.conf "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
+wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
 wget -O /hdd/NordVPN.zip "https://github.com/davesayers2014/OpenVPN/blob/master/NordVPN/NordVPN.zip?raw=true" /dev/null 2>&1
 cd /hdd
 unzip -o NordVPN.zip /dev/null 2>&1
@@ -32,10 +36,10 @@ rm -v /hdd/NordVPN.zip /dev/null 2>&1
 cd
 echo "Configuring OpenVPN"
 echo $LINE
-sed -i -e "s/USERNAME/$USERNAME/g" /tmp/password.conf;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/password.conf && chmod 777 /tmp/password.conf &> /dev/null 2>&1
-find /hdd/NordVPN -type d -exec cp /tmp/password.conf {} \;
-rm -f hdd/NordVPN/password.conf /dev/null 2>&1
-rm -f /tmp/password.conf /dev/null 2>&1
+sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/auth.txt && chmod 777 /tmp/auth.txt &> /dev/null 2>&1
+find /hdd/NordVPN -type d -exec cp /tmp/auth.txt {} \;
+rm -f hdd/NordVPN/auth.txt /dev/null 2>&1
+rm -f /tmp/auth.txt /dev/null 2>&1
 rm -f /home/root/Nord.sh.sh >/dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
