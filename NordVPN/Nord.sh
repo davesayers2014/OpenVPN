@@ -29,18 +29,18 @@ opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/
 echo "Installing OpenVPN Configs"
 echo $LINE
 wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
-wget -O /hdd/NordVPN.zip "https://github.com/davesayers2014/OpenVPN/blob/master/NordVPN/NordVPN.zip?raw=true" /dev/null 2>&1
+wget -O /hdd/NordVPN.zip "https://github.com/davesayers2014/OpenVPN/blob/master/NordVPN/NordVPN.zip?raw=true" &> /dev/null 2>&1
 cd /hdd
-unzip -o NordVPN.zip /dev/null 2>&1
-rm -v /hdd/NordVPN.zip /dev/null 2>&1
+unzip -o NordVPN.zip &> /dev/null 2>&1
+rm -v /hdd/NordVPN.zip &> /dev/null 2>&1
 cd
 echo "Configuring OpenVPN"
 echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/auth.txt && chmod 777 /tmp/auth.txt &> /dev/null 2>&1
 find /hdd/NordVPN -type d -exec cp /tmp/auth.txt {} \;
-rm -f hdd/NordVPN/auth.txt /dev/null 2>&1
-rm -f /tmp/auth.txt /dev/null 2>&1
-rm -f /home/root/Nord.sh.sh >/dev/null 2>&1
+rm -f hdd/NordVPN/auth.txt &> /dev/null 2>&1
+rm -f /tmp/auth.txt &> /dev/null 2>&1
+rm -f /home/root/Nord.sh.sh &> /dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
 fi
