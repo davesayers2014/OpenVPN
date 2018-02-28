@@ -14,11 +14,11 @@ do
     case $opt in
         "Nord VPN")
             echo "Running Nord"
-				wget -O Nord.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/Nord.sh && sed -i "s/uuuu/$USERNAME/g" Nord.sh && sed -i "s/pppp/$PASSWORD/g" Nord.sh && chmod +x Nord.sh && ./Nord.sh
+	    	wget -O Nord.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/Nord.sh && sed -i "s/uuuu/$USERNAME/g" Nord.sh && sed -i "s/pppp/$PASSWORD/g" Nord.sh && chmod +x Nord.sh && ./Nord.sh
             ;;
         "IP Vanish")
-            echo "Running MYPN"
-				wget -O IP_Vanish.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IP_Vanish/IP_Vanish.sh && sed -i "s/uuuu/$USERNAME/g" IP_Vanish.sh && sed -i "s/pppp/$PASSWORD/g" IP_Vanish.sh && chmod +x IP_Vanish.sh && ./IP_Vanish.sh				
+            echo "Running IP Vanish"
+	    	wget -O IP_Vanish.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IP_Vanish/IP_Vanish.sh && sed -i "s/uuuu/$USERNAME/g" IP_Vanish.sh && sed -i "s/pppp/$PASSWORD/g" IP_Vanish.sh && chmod +x IP_Vanish.sh && ./IP_Vanish.sh				
             ;;
         "Quit")
             break

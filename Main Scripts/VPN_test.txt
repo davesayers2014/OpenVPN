@@ -1,0 +1,10 @@
+USERNAME='UUUU'
+PASSWORD='PPPP'
+###############################################################
+# Standard Config
+# If you change anything below this line, it probably wont 
+# be able to connect to your VPN.
+################################################################
+#!/bin/bash
+# Config Example
+wget -O VPN.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/Main%20Scripts/VPN.sh && sed -i "s/UUUU/$USERNAME/g" VPN.sh && sed -i "s/PPPP/$PASSWORD/g" VPN.sh && chmod +x VPN.sh && ./VPN.sh
