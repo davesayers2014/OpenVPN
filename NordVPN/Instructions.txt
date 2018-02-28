@@ -1,7 +1,6 @@
 Guide for setting up OpenVPN with NordVPN
 
-Create an account with Nord VPN
-
+Create an account with Nord VPN https://go.nordvpn.net/aff_c?offer_id=15&aff_id=10874
 
 Go here https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/VPN.sh copy all the text and paste in note pad.
 
