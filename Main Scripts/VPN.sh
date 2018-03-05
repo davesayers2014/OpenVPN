@@ -8,7 +8,7 @@ PASSWORD='PPPP'
 #!/bin/bash
 # Bash Menu Script Test
 PS3='Please enter your choice: '
-options=("Nord VPN" "IP Vanish" "Digibit" "Quit")
+options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -23,6 +23,10 @@ do
         "Digibit")
             echo "Running Digibit"
 				wget -O Digibit.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/DigiBit/Digibit.sh && sed -i "s/uuuu/$USERNAME/g" Digibit.sh && sed -i "s/pppp/$PASSWORD/g" Digibit.sh && chmod +x Digibit.sh && ./Digibit.sh				
+            ;:
+        "PureVPN")
+            echo "Running PureVPN"
+				wget -O Pure.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/PureVPN/Pure.sh && sed -i "s/uuuu/$USERNAME/g" Pure.sh && sed -i "s/pppp/$PASSWORD/g" Pure.sh && chmod +x Pure.sh && ./Pure.sh				
             ;;
         "Quit")
             break
