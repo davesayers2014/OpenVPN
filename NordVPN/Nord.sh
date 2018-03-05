@@ -13,7 +13,7 @@ PASSWORD='pppp'
 ################################################################
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/NordVPN.zip >/dev/null 2>&1
-rm -rv /hdd/NordVPN.zip >/dev/null 2>&1
+rm -rv /hdd/NordVPN >/dev/null 2>&1
 mkdir -p /etc/openvpn
 echo "downloading VPN Changer"
 echo $LINE
