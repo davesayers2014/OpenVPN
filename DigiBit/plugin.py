@@ -31,7 +31,7 @@ DEFAULTCOUNTRY = "http://static.wie-ist-meine-ip.de/img/country/unknown.png"
 LOGFILE = "/tmp/vpncheck.log"
 
 config.vpnChanger = ConfigSubsection()
-config.vpnChanger.dir = ConfigText(default="/hdd/IP_Vanish/", fixed_size=False)
+config.vpnChanger.dir = ConfigText(default="/hdd/Digibit/", fixed_size=False)
 config.vpnChanger.lastVpn = ConfigText(default=" ", fixed_size=False)
 config.vpnChanger.vpnCheck = ConfigYesNo(default=False)
 config.vpnChanger.setNetwork = ConfigYesNo(default=False)
