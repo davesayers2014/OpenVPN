@@ -15,7 +15,6 @@ rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/NordVPN.zip >/dev/null 2>&1
 rm -rv /hdd/NordVPN >/dev/null 2>&1
 mkdir -p /etc/openvpn
-mkdir -p /hdd/NordVPN
 echo "downloading VPN Changer"
 echo $LINE
 cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
