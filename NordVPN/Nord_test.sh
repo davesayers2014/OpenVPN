@@ -14,6 +14,8 @@ PASSWORD='pppp'
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/NordVPN.zip >/dev/null 2>&1
 rm -rv /hdd/NordVPN >/dev/null 2>&1
+rm -rv /hdd/ovpn_tcp >/dev/null 2>&1
+rm -rv /hdd/ovpn_udp >/dev/null 2>&1
 mkdir -p /etc/openvpn
 echo "downloading VPN Changer"
 echo $LINE
@@ -32,7 +34,7 @@ wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/
 wget -O /hdd/NordVPN.zip "https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip" &> /dev/null 2>&1
 echo "Configuring OpenVPN"
 cd /hdd
-unzip -o NordVPN &> /dev/null 2>&1
+unzip -o NordVPN.zip &> /dev/null 2>&1
 rm -v /hdd/NordVPN.zip &> /dev/null 2>&1
 rm -rv /hdd/ovpn_tcp >/dev/null 2>&1
 mv /hdd/ovpn_udp /hdd/NordVPN
