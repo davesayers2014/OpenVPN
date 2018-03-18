@@ -27,10 +27,12 @@ echo $LINE
 opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk &> /dev/null 2>&1
 cd
 wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IP_Vanish/plugin.py" &> /dev/null 2>&1
+
 #Install OpenVPN
 echo "Installing OpenVPN"
 echo $LINE
-opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
+opkg update &> /dev/null 2>&1
+opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 
 # Download Configs
 echo "Downloading OpenVPN Configs"
