@@ -45,7 +45,7 @@ echo "Configuring OpenVPN"
 cd /hdd
 unzip -o NordVPN.zip &> /dev/null 2>&1
 rm -v /hdd/NordVPN.zip &> /dev/null 2>&1
-rm -rv /hdd/ovpn_tcp &> >/dev/null 2>&1
+rm -rv /hdd/ovpn_tcp &> /dev/null 2>&1
 mv /hdd/ovpn_udp /hdd/NordVPN
 cd /hdd/NordVPN &> >/dev/null 2>&1
 
