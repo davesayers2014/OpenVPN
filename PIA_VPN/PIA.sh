@@ -63,11 +63,12 @@ done
 # Copy cert file into sub folders
 find /hdd/PIA_VPN -type d -exec cp /hdd/PIA_VPN/ca.rsa.2048/ca.rsa.2048.crt {} \; &> /dev/null 2>&1
 
-# Copy perm file into sub folders
-find /hdd/PIA_VPN -type d -exec cp /hdd/PIA_VPN/crl.rsa.2048/crl.rsa.2048.perm {} \; &> /dev/null 2>&1
-
 # Delete ca.rsa.2048 folder
 rm -rf /hdd/PIA_VPN/ca.rsa.2048 &> /dev/null 2>&1
+
+# Copy pem file into sub folders
+find /hdd/PIA_VPN -type d -exec cp /hdd/PIA_VPN/crl.rsa.2048/crl.rsa.2048.pem {} \; &> /dev/null 2>&1
+
 
 # Delete ca.rsa.2048 folder
 rm -rf /hdd/PIA_VPN/crl.rsa.2048 &> /dev/null 2>&1
@@ -82,7 +83,7 @@ sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD
 find /hdd/PIA_VPN -type d -exec cp /tmp/auth.txt {} \;
 # Delete un needed files 
 rm -f /hdd/PIA_VPN/ca.rsa.2048.crt &> /dev/null 2>&1
-rm -f /hdd/PIA_VPN/crl.rsa.2048.perm &> /dev/null 2>&1
+rm -f /hdd/PIA_VPN/crl.rsa.2048.pem &> /dev/null 2>&1
 rm -f /hdd/PIA_VPN/auth.txt &> /dev/null 2>&1
 rm -f /tmp/auth.txt &> /dev/null 2>&1
 rm -f /home/root/PIA.sh &> /dev/null 2>&1
