@@ -8,7 +8,7 @@ PASSWORD='PPPP'
 #!/bin/bash
 # Bash Menu Script Test
 PS3='Please enter your choice: '
-options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN "Quit")
+options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Quit")
 select opt in "${options[@]}"
 do
 	case $opt in
