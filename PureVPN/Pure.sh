@@ -14,7 +14,7 @@ PASSWORD='pppp'
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/PureVPN.zip >/dev/null 2>&1
 rm -rv /hdd/PureVPN >/dev/null 2>&1
-rm -rv "/hdd/Linux OpenVPN Updated files" &> /dev/null 2>&1
+rm -rv "/hdd/linux-files" &> /dev/null 2>&1
 mkdir -p /etc/openvpn
 
 # download and install VPN Changer
@@ -44,7 +44,7 @@ echo "Configuring OpenVPN"
 cd /hdd
 unzip -o PureVPN.zip &> /dev/null 2>&1
 rm -v /hdd/PureVPN.zip &> /dev/null 2>&1
-mv "/hdd/linux-files/Linux OpenVPN Updated files/UDP" /hdd/PureVPN
+mv "/hdd/linux-files/OpenVPN_Config_Files/UDP" /hdd/PureVPN
 
 cd /hdd/PureVPN &> /dev/null 2>&1
 
@@ -75,7 +75,7 @@ sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD
 # copy auth.txt to PureVPN sub folders 
 find /hdd/PureVPN -type d -exec cp /tmp/auth.txt {} \;
 # delete unneeded files
-rm -rv "/hdd/Linux OpenVPN Updated files" &> /dev/null 2>&1
+rm -rv "/hdd/OpenVPN_Config_Files" &> /dev/null 2>&1
 rm -f /hdd/PureVPN/auth.txt &> /dev/null 2>&1
 rm -f /tmp/auth.txt &> /dev/null 2>&1
 rm -f /home/root/Pure.sh &> /dev/null 2>&1
