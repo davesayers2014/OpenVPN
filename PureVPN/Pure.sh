@@ -64,9 +64,9 @@ for file in *; do
 done
 
 # Copy ca.crt into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/Linux OpenVPN Updated files/ca.crt" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/OpenVPN_Config_Files/ca.crt" {} \;
 # Copy Wdc.key into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/Linux OpenVPN Updated files/Wdc.key" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/OpenVPN_Config_Files/Wdc.key" {} \;
 cd
 echo $LINE
 
