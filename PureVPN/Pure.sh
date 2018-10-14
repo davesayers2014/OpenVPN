@@ -63,10 +63,14 @@ for file in *; do
   fi
 done
 
+rm -rv /hdd/PureVPN/UDP &> /dev/null 2>&1
+rm -rv /hdd/PureVPN/Wdc &> /dev/null 2>&1
+rm -rv /hdd/PureVPN/ca &> /dev/null 2>&1
+
 # Copy ca.crt into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/OpenVPN_Config_Files/ca.crt" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/ca.crt" {} \;
 # Copy Wdc.key into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/OpenVPN_Config_Files/Wdc.key" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/Wdc.key" {} \;
 cd
 echo $LINE
 
@@ -74,6 +78,7 @@ echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/auth.txt && chmod 777 /tmp/auth.txt &> /dev/null 2>&1
 # copy auth.txt to PureVPN sub folders 
 find /hdd/PureVPN -type d -exec cp /tmp/auth.txt {} \;
+
 # delete unneeded files
 rm -rv "/hdd/OpenVPN_Config_Files" &> /dev/null 2>&1
 rm -f /hdd/PureVPN/auth.txt &> /dev/null 2>&1
