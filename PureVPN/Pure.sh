@@ -68,9 +68,9 @@ rm -rv /hdd/PureVPN/Wdc &> /dev/null 2>&1
 rm -rv /hdd/PureVPN/ca &> /dev/null 2>&1
 
 # Copy ca.crt into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/PureVPN/ca.crt" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/ca.crt" {} \;
 # Copy Wdc.key into sub folders
-find /hdd/PureVPN -type d -exec cp "/hdd/PureVPN/Wdc.key" {} \;
+find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/Wdc.key" {} \;
 cd
 echo $LINE
 
