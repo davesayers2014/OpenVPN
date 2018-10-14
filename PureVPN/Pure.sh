@@ -44,7 +44,7 @@ echo "Configuring OpenVPN"
 cd /hdd
 unzip -o PureVPN.zip &> /dev/null 2>&1
 rm -v /hdd/PureVPN.zip &> /dev/null 2>&1
-mv "/hdd/Linux OpenVPN Updated files/UDP" /hdd/PureVPN
+mv "/hdd/linux-files/Linux OpenVPN Updated files/UDP" /hdd/PureVPN
 
 cd /hdd/PureVPN &> /dev/null 2>&1
 
