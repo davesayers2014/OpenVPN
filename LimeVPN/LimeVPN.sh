@@ -70,7 +70,7 @@ echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/auth.txt && chmod 777 /tmp/auth.txt &> /dev/null 2>&1
 
 # Copy auth.txt to NowrdVPN sub folders
-find /hdd/NordVPN -type d -exec cp /tmp/auth.txt {} \;
+find /hdd/LimeVPN -type d -exec cp /tmp/auth.txt {} \;
 # Delete uneeded files 
 rm -f /hdd/LimeVPN/auth.txt &> /dev/null 2>&1
 rm -f /tmp/auth.txt &> /dev/null 2>&1
