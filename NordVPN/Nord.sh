@@ -1,4 +1,5 @@
 #!/bin/sh
+unset LD_PRELOAD
 USERNAME='uuuu'
 PASSWORD='pppp'
 ###############################################################
