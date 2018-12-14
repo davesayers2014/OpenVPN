@@ -1,5 +1,6 @@
 #!/bin/sh
 unset LD_PRELOAD
+alias wgetncc='wget --no-check-certificate -O'
 USERNAME='uuuu'
 PASSWORD='pppp'
 ###############################################################
@@ -22,12 +23,12 @@ mkdir -p /etc/openvpn
 # Download and install VPN Changer
 echo "downloading VPN Changer"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wgetncc /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing VPN Changer"
 echo $LINE
 opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk &> /dev/null 2>&1
 cd
-wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/plugin.py" &> /dev/null 2>&1
+wgetncc /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/plugin.py" &> /dev/null 2>&1
 
 # Install OpenVPN
 echo "Installing OpenVPN"
@@ -38,8 +39,8 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
-wget -O /hdd/NordVPN.zip "https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip" &> /dev/null 2>&1
+wgetncc /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
+wgetncc /hdd/NordVPN.zip "https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
