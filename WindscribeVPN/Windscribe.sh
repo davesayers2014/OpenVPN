@@ -36,7 +36,7 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Downloading OpenVPN Configs"
 echo $LINE
 wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
-wget -O /hdd/NordVPN.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/Windscribe.zip" &> /dev/null 2>&1
+wget -O /hdd/Windscribe.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/Windscribe.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
