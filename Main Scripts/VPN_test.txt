@@ -1,3 +1,4 @@
+echo "check_certificate = off" >> ~/.wgetrc
 USERNAME='UUUU'
 PASSWORD='PPPP'
 ###############################################################
@@ -7,4 +8,4 @@ PASSWORD='PPPP'
 ################################################################
 #!/bin/bash
 # Config Example
-wget -O VPN.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/Main%20Scripts/VPN.sh && sed -i "s/UUUU/$USERNAME/g" VPN.sh && sed -i "s/PPPP/$PASSWORD/g" VPN.sh && chmod +x VPN.sh && ./VPN.sh
+wget -O https://raw.githubusercontent.com/davesayers2014/OpenVPN/ATV6.3/Main%20Scripts/VPN.sh && sed -i "s/UUUU/$USERNAME/g" VPN.sh && sed -i "s/PPPP/$PASSWORD/g" VPN.sh && chmod +x VPN.sh && ./VPN.sh

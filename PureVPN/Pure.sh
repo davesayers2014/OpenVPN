@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "check_certificate = off" >> ~/.wgetrc
 USERNAME='uuuu'
 PASSWORD='pppp'
 ###############################################################
