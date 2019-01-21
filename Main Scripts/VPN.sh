@@ -1,5 +1,6 @@
 #!/bin/sh
 unset LD_PRELOAD
+echo "check_certificate = off" >> ~/.wgetrc
 USERNAME='UUUU'
 PASSWORD='PPPP'
 ###############################################################
