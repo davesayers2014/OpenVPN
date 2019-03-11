@@ -12,7 +12,7 @@ PASSWORD='PPPP'
 #!/bin/bash
 # Bash Menu Script Test
 PS3='Please enter your choice: '
-options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "Quit")
+options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "Quit")
 select opt in "${options[@]}"
 do
 	case $opt in
@@ -39,6 +39,10 @@ do
 		"Windscribe")
 			echo "Running Windscribe"
 				wget -O Windscribe.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/Windscribe.sh && sed -i "s/uuuu/$USERNAME/g" Windscribe.sh && sed -i "s/pppp/$PASSWORD/g" Windscribe.sh && chmod +x Windscribe.sh && ./Windscribe.sh
+			;;
+		"SurfShark")
+			echo "Running SurfShark"
+				wget -O Surfshark.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/SurfShark/Surfshark.sh && sed -i "s/uuuu/$USERNAME/g" Surfshark.sh && sed -i "s/pppp/$PASSWORD/g" Surfshark.sh && chmod +x Surfshark.sh && ./Surfshark.sh
 			;;
 		"Quit")
 			break
