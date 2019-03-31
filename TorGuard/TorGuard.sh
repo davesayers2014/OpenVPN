@@ -73,7 +73,7 @@ find /hdd/TorGuard -type d -exec cp /tmp/auth.txt {} \;
 rm -f /hdd/TorGuard/auth.txt &> /dev/null 2>&1
 rm -f /hdd/TorGuard/ca.crt >/dev/null 2>&1
 rm -rv /hdd/TorGuard/ca >/dev/null 2>&1
-rm -f /home/root/Surfhark.sh &> /dev/null 2>&1
+rm -f /home/root/TorGuard.sh &> /dev/null 2>&1
 rm -f /tmp/auth.txt &> /dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
