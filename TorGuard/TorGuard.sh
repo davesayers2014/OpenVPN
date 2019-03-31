@@ -15,6 +15,7 @@ PASSWORD='pppp'
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/tmp.zip >/dev/null 2>&1
 rm -rv /hdd/TorGuard >/dev/null 2>&1
+rm -rv /hdd/OpenVPN-UDP >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
 # Download and install VPN Changer
@@ -36,14 +37,13 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
+cd /hdd
 wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
 wget "https://torguard.net/downloads/OpenVPN-UDP.zip" -O /hdd/tmp.zip; unzip /hdd/tmp.zip; rm /hdd/tmp.zip &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
-cd /hdd
 mv "/hdd/OpenVPN-UDP" /hdd/TorGuard
-
 cd /hdd/TorGuard
 
 # rename .ovpn to .conf
