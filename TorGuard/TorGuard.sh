@@ -60,7 +60,7 @@ for file in *; do
   fi
 done
 
-find /hdd/TorGuard -type d -exec cp "/hdd/TorGuard/ca/ca.crt" {} \;
+find /hdd/TorGuard -type d -exec cp "/hdd/TorGuard/ca/ca.crt" {} \; &> /dev/null 2>&1
 
 cd
 echo $LINE
