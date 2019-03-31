@@ -60,7 +60,7 @@ for file in *; do
   fi
 done
 
-find /hdd/TorGuard -type d -exec cp "/hdd/TorGuard/ca.crt" {} \;
+find /hdd/TorGuard -type d -exec cp "/hdd/TorGuard/ca/ca.crt" {} \;
 
 cd
 echo $LINE
@@ -72,7 +72,7 @@ find /hdd/TorGuard -type d -exec cp /tmp/auth.txt {} \;
 # Delete uneeded files 
 rm -f /hdd/TorGuard/auth.txt &> /dev/null 2>&1
 rm -f /hdd/TorGuard/ca.crt >/dev/null 2>&1
-rm -rv /hdd/TorGuard/ca.crt >/dev/null 2>&1
+rm -rv /hdd/TorGuard/ca >/dev/null 2>&1
 rm -f /home/root/Surfhark.sh &> /dev/null 2>&1
 rm -f /tmp/auth.txt &> /dev/null 2>&1
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
