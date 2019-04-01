@@ -50,7 +50,7 @@ cd /hdd/TorGuard
 for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
 
 # Edit all conf files to have auth-user-pass/auth-user-pass auth.txt
-find . -name "*.conf" -exec sed -i "s/auth-user-pass/auth-user-pass auth.txt/g" '{}' \;
+find . -name "*.conf" -exec sed -i "s/auth-user-pass/auth-user-pass /etc/openvpn/auth.txt/g" '{}' \;
 
 # Move all files into sub folders
 for file in *; do
