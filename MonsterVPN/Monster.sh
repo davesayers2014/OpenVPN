@@ -13,7 +13,7 @@ PASSWORD='pppp'
 # be able to connect to your VPN.
 ################################################################
 rm -rv /etc/openvpn >/dev/null 2>&1
-rm -v /hdd/MonsterVPN.zip >/dev/null 2>&1
+rm -v /hdd/MonsterVPN/MonsterVPN.zip >/dev/null 2>&1
 rm -rv /hdd/MonsterVPN >/dev/null 2>&1
 mkdir -p /hdd/MonsterVPN
 mkdir -p /etc/openvpn
@@ -44,7 +44,7 @@ wget -O /hdd/MonsterVPN/MonsterVPN.zip "http://www.monstervpn.tech/ovpn_configur
 echo "Configuring OpenVPN"
 cd /hdd/MonsterVPN
 unzip -o MonsterVPN.zip &> /dev/null 2>&1
-rm -v /hdd/MonsterVPN.zip &> /dev/null 2>&1
+rm -v /hdd/MonsterVPN/MonsterVPN.zip &> /dev/null 2>&1
 rm -rv /hdd/MonsterVPN/__MACOSX >/dev/null 2>&1
 
 
