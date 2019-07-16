@@ -45,6 +45,7 @@ mv /hdd/OpenVPN-Configs/secure-client.crt /tmp/secure-client.crt &> /dev/null 2>
 mv /hdd/OpenVPN-Configs/secure-client.key /tmp/secure-client.key &> /dev/null 2>&
 mv /hdd/OpenVPN-Configs/Wdc.key /tmp/Wdc.key &> /dev/null 2>&
 mv /hdd/OpenVPN-Configs /hdd/ivacyvpn &> /dev/null 2>&
+cd /hdd/ivacyvpn
 
 
 # rename .ovpn to .conf
