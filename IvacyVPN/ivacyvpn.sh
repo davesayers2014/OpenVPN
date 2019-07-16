@@ -39,12 +39,12 @@ echo $LINE
 wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
 cd /hdd/
 wget "https://support.ivacy.com/wp-content/uploads/2018/09/OpenVPN-Configs.zip" -O /hdd/tmp.zip; unzip /hdd/tmp.zip; rm /hdd/tmp.zip &> /dev/null 2>&1
-rm -f /hdd/OpenVPN-Configs/"ca - Copy.crt" &> /dev/null 2>&
-mv /hdd/OpenVPN-Configs/ca.crt /tmp/ca.crt &> /dev/null 2>&
-mv /hdd/OpenVPN-Configs/secure-client.crt /tmp/secure-client.crt &> /dev/null 2>&
-mv /hdd/OpenVPN-Configs/secure-client.key /tmp/secure-client.key &> /dev/null 2>&
-mv /hdd/OpenVPN-Configs/Wdc.key /tmp/Wdc.key &> /dev/null 2>&
-mv /hdd/OpenVPN-Configs /hdd/ivacyvpn &> /dev/null 2>&
+rm -f /hdd/OpenVPN-Configs/"ca - Copy.crt" &> /dev/null 2>&1
+mv /hdd/OpenVPN-Configs/ca.crt /tmp/ca.crt &> /dev/null 2>&1
+mv /hdd/OpenVPN-Configs/secure-client.crt /tmp/secure-client.crt &> /dev/null 2>&1
+mv /hdd/OpenVPN-Configs/secure-client.key /tmp/secure-client.key &> /dev/null 2>&1
+mv /hdd/OpenVPN-Configs/Wdc.key /tmp/Wdc.key &> /dev/null 2>&1
+mv /hdd/OpenVPN-Configs /hdd/ivacyvpn &> /dev/null 2>&1
 cd /hdd/ivacyvpn
 
 
