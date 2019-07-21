@@ -12,7 +12,7 @@ PASSWORD='PPPP'
 #!/bin/bash
 # Bash Menu Script Test
 PS3='Please enter your choice: '
-options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "Quit")
+options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "IvacyVPN" "Quit")
 select opt in "${options[@]}"
 do
 	case $opt in
@@ -47,6 +47,10 @@ do
 		"TorGuard")
 			echo "Running TorGuard"
 				wget -O TorGuard.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/TorGuard/TorGuard.sh && sed -i "s/uuuu/$USERNAME/g" TorGuard.sh && sed -i "s/pppp/$PASSWORD/g" TorGuard.sh && chmod +x TorGuard.sh && ./TorGuard.sh
+			;;
+		"IvacyVPN")
+			echo "Running IvacyVPN"
+				wget -O ivacyvpn.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IvacyVPN/ivacyvpn.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
 			;;
 		"Quit")
 			break
