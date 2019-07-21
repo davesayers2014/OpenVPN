@@ -15,6 +15,7 @@ PASSWORD='pppp'
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/tmp.zip >/dev/null 2>&1
 rm -rv /hdd/ivacyvpn >/dev/null 2>&1
+rm -rv /hdd/OpenVPN-Configs >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
 # Download and install VPN Changer
