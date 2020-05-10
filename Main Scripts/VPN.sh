@@ -10,7 +10,7 @@ PASSWORD='PPPP'
 # be able to connect to your VPN.
 ################################################################
 #!/bin/bash
-# Bash Menu Script Test
+# Bash Menu Script master
 PS3='Please enter your choice: '
 options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "IvacyVPN" "Quit")
 select opt in "${options[@]}"

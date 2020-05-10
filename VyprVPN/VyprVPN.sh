@@ -14,11 +14,11 @@ PASSWORD='pppp'
 ################################################################
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/temp.zip >/dev/null 2>&1
-rm -rv /hdd/VyprVPN >/dev/null 2>&1
+rm -rv /hdd/VyprVPN2 >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
 # Download and install VPN Changer
-echo "Installing VPN Changer"
+echo "Installing VPN Manager"
 echo $LINE
 opkg --force-reinstall --force-overwrite install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.0.8_all.ipk?raw=true &> /dev/null 2>&1
 cd
@@ -38,25 +38,26 @@ wget "https://support.goldenfrog.com/hc/article_attachments/360008728172/GF_Open
 # Configure VPN
 echo "Configuring OpenVPN"
 rm -rv OpenVPN256 &> /dev/null 2>&1
-mv "/hdd/OpenVPN160" VyprVPN
-cd /hdd/VyprVPN &> /dev/null 2>&1
+mv "/hdd/OpenVPN160" VyprVPN2
+cd /hdd/VyprVPN2 &> /dev/null 2>&1
 rm -v ca.vyprvpn.com.crt &> /dev/null 2>&1
 
 
 # rename .ovpn to .conf
-for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
+#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
 
 # Move all files into sub folders
-for file in *; do
-  if [[ -f "$file" ]]; then
-    mkdir "${file%.*}"
-    mv "$file" "${file%.*}"
-  fi
-done
+#for file in *; do
+#  if [[ -f "$file" ]]; then
+#    mkdir "${file%.*}"
+#    mv "$file" "${file%.*}"
+#  fi
+#done
 
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/VyprVPN/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.password=PASSWORD' /etc/enigma2/settings

@@ -16,27 +16,25 @@ rm -v /hdd/LTVPN.zip >/dev/null 2>&1
 rm -rv /hdd/LTVPN >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
-# Download and install VPN Changer
+# download and install VPN Changer
 echo "downloading VPN Changer"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing VPN Changer"
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk &> /dev/null 2>&1
+opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
 cd
-wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/LTVPN/plugin.py" &> /dev/null 2>&1
-
-# Install OpenVPN
 echo "Installing OpenVPN"
 echo $LINE
+
+# Install OpenVPN
 opkg update &> /dev/null 2>&1
 opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/password.conf" &> /dev/null 2>&1
-wget -O /hdd/Windscribe.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/LTVPN/LTVPN.zip" &> /dev/null 2>&1
+wget -O /hdd/LTVPN.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/LTVPN/LTVPN.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
@@ -48,15 +46,20 @@ cd /hdd/LTVPN &> /dev/null 2>&1
 
 cd
 echo $LINE
-#Add username and password to auth.txt
-sed -i -e "s/USERNAME/$USERNAME/g" /tmp/auth.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /tmp/auth.txt && chmod 777 /tmp/auth.txt &> /dev/null 2>&1
 
-# Copy auth.txt to NowrdVPN sub folders
-find /hdd/LTVPN -type d -exec cp /tmp/auth.txt {} \;
+# Config VPN Manager
+cd .
+init 4
+sleep 3
+sed -i '$i config.vpnmanager.directory=/hdd/LTVPN/' /etc/enigma2/settings
+sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings
+sed -i '$i config.vpnmanager.password=PASSWORD' /etc/enigma2/settings
+sed -i -e "s/USERNAME/$USERNAME/g" /etc/enigma2/settings;sed -i -e "s/PASSWORD/$PASSWORD/g" /etc/enigma2/settings &> /dev/null 2>&1
+echo $LINE
+
 # Delete uneeded files 
-rm -f /hdd/LTVPN/auth.txt &> /dev/null 2>&1
-rm -f /tmp/auth.txt &> /dev/null 2>&1
 rm -f /home/root/LTVPN.sh &> /dev/null 2>&1
+init 3
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"
 exit
 fi
