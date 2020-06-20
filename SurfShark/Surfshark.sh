@@ -42,7 +42,7 @@ wget "https://account.surfshark.com/api/v1/server/configurations" -O /hdd/surfsh
 
 
 # rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
+for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
 
 # Move all files into sub folders
 #for file in *; do
