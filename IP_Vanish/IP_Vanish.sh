@@ -15,7 +15,7 @@ PASSWORD='pppp'
 
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/IP_Vanish.zip >/dev/null 2>&1
-rm -rv /hdd/IP_Vanish >/dev/null 2>&1
+rm -rv /hdd/IP_Vanish2 >/dev/null 2>&1
 mkdir -p /etc/openvpn
 mkdir -p /hdd/IP_Vanish2
 
