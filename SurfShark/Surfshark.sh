@@ -37,7 +37,7 @@ echo "Downloading OpenVPN Configs"
 echo $LINE
 mkdir -p /hdd/surfsharkvpn2
 cd /hdd/surfsharkvpn2
-wget "https://account.surfshark.com/api/v1/server/configurations" -O /hdd/surfsharkvpn2/tmp.zip; unzip /hdd/surfsharkvpn2/tmp.zip; rm /hdd/surfsharkvpn2/tmp.zip &> /dev/null 2>&1
+wget "https://my.surfshark.com/vpn/api/v1/server/configurations" -O /hdd/surfsharkvpn2/tmp.zip; unzip /hdd/surfsharkvpn2/tmp.zip; rm /hdd/surfsharkvpn2/tmp.zip &> /dev/null 2>&1
 
 
 
@@ -57,7 +57,7 @@ cd .
 init 4
 sleep 3
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
-sed -i '$i config.vpnmanager.directory=/hdd/Surfshark2/' /etc/enigma2/settings
+sed -i '$i config.vpnmanager.directory=/hdd/Surfsharkvpn2/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.password=PASSWORD' /etc/enigma2/settings
 sed -i -e "s/USERNAME/$USERNAME/g" /etc/enigma2/settings;sed -i -e "s/PASSWORD/$PASSWORD/g" /etc/enigma2/settings &> /dev/null 2>&1
