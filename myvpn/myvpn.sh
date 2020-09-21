@@ -24,8 +24,8 @@ echo $LINE
 opkg update && opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Installing OpenVPN Configs"
 echo $LINE
-wget -O /etc/openvpn/mpnvpn.conf "https://mypn.co/files/linux/mpnvpn.ovpn" &> /dev/null 2>&1
-wget -O /etc/openvpn/user.txt "https://mypn.co/files/linux/user.txt" &> /dev/null 2>&1
+wget -O /etc/openvpn/mpnvpn.conf "https://www.mypn.co/files/linux/mpnvpn.ovpn" &> /dev/null 2>&1
+wget -O /etc/openvpn/user.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/login.conf" &> /dev/null 2>&1
 echo "Configuring OpenVPN"
 echo $LINE
 sed -i -e "s/USERNAME/$USERNAME/g" /etc/openvpn/user.txt;sed -i -e "s/PASSWORD/$PASSWORD/g" /etc/openvpn/user.txt && chmod 777 /etc/openvpn/user.txt &> /dev/null 2>&1
