@@ -20,7 +20,7 @@ mkdir -p /etc/openvpn
 # download and install VPN Changer
 echo "downloading VPN Manager"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/261020/enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing VPN Manager"
 echo $LINE
 opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
@@ -36,8 +36,18 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 echo "Downloading OpenVPN Configs"
 echo $LINE
 mkdir -p /hdd/surfsharkvpn2
+
+python
+
+import sys
+
+import urllib
+urllib.urlretrieve ("https://my.surfshark.com/vpn/api/v1/server/configurations", "/hdd/surfsharkvpn2/tmp.zip")
+exit()
+
 cd /hdd/surfsharkvpn2
-wget "https://my.surfshark.com/vpn/api/v1/server/configurations" -O /hdd/surfsharkvpn2/tmp.zip; unzip /hdd/surfsharkvpn2/tmp.zip; rm /hdd/surfsharkvpn2/tmp.zip &> /dev/null 2>&1
+
+#wget "https://my.surfshark.com/vpn/api/v1/server/configurations" -O /hdd/surfsharkvpn2/tmp.zip; unzip /hdd/surfsharkvpn2/tmp.zip; rm /hdd/surfsharkvpn2/tmp.zip &> /dev/null 2>&1
 
 
 
