@@ -38,7 +38,7 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 #Install OpenVPN
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /hdd/Digibit2/Digibit.zip "http://digibitdesign.com/certs/Certificates.zip" &> /dev/null 2>&1
+wget -O /hdd/Digibit2/Digibit.zip "http://digibitdesign.com/certs/certificates.zip" &> /dev/null 2>&1
 
 #Configure OpenVPN
 echo "Configuring OpenVPN"
