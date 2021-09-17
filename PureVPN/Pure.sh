@@ -27,7 +27,6 @@ else
 	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
 fi
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk &> /dev/null 2>&1
 cd
 echo "Installing OpenVPN"
 echo $LINE
