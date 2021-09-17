@@ -19,14 +19,13 @@ mkdir -p /etc/openvpn
 mkdir -p /hdd/Digibit2
 
 # download and install VPN Changer
-echo "downloading VPN Changer"
+echo "downloading VPN Manager"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
-echo "Installing VPN Manager"
-echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
-cd
-echo "Installing OpenVPN"
+if [[ $pyv =~ "Python 3" ]]; then
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.7-py3_all.ipk?raw=true &> /dev/null 2>&1
+else
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
+fi
 echo $LINE
 
 #Install OpenVPN

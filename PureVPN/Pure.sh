@@ -21,10 +21,13 @@ mkdir -p /etc/openvpn
 # download and install VPN Changer
 echo "downloading VPN Manager"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
-echo "Installing VPN Manager"
+if [[ $pyv =~ "Python 3" ]]; then
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.7-py3_all.ipk?raw=true &> /dev/null 2>&1
+else
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
+fi
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
+opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk &> /dev/null 2>&1
 cd
 echo "Installing OpenVPN"
 echo $LINE
@@ -45,26 +48,10 @@ unzip -o PureVPN.zip &> /dev/null 2>&1
 rm -v /hdd/PureVPN.zip &> /dev/null 2>&1
 mv "/hdd/linux-files/OpenVPN_Config_Files/UDP" /hdd/PureVPN2
 
-cd /hdd/PureVPN2 &> /dev/null 2>&1
-# rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
-
-# Move all files into sub folders
-#for file in *; do
-#  if [[ -f "$file" ]]; then
-#    mkdir "${file%.*}"
-#    mv "$file" "${file%.*}"
-#  fi
-#done
-
-#rm -rv /hdd/PureVPN/UDP &> /dev/null 2>&1
-#rm -rv /hdd/PureVPN/Wdc &> /dev/null 2>&1
-#rm -rv /hdd/PureVPN/ca &> /dev/null 2>&1
-
-# Copy ca.crt into sub folders
-#find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/ca.crt" {} \;
-# Copy Wdc.key into sub folders
-#find /hdd/PureVPN -type d -exec cp "/hdd/linux-files/OpenVPN_Config_Files/TCP/Wdc.key" {} \;
+for file in /hdd/PureVPN2/*.ovpn
+do
+    echo "tls-cipher "DEFAULT:@SECLEVEL=0"" >> "$file"
+done
 cd
 echo $LINE
 
