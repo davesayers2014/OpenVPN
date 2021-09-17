@@ -30,7 +30,7 @@ do
 			;;
 		"PureVPN")
 			echo "Running PureVPN"
-				wget -O Pure.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/PureVPN/Pure.sh && sed -i "s/uuuu/$USERNAME/g" Pure.sh && sed -i "s/pppp/$PASSWORD/g" Pure.sh && chmod +x Pure.sh && ./Pure.sh				
+				wget -O Pure.sh https://github.com/davesayers2014/OpenVPN/raw/PY3/PureVPN/Pure.sh && sed -i "s/uuuu/$USERNAME/g" Pure.sh && sed -i "s/pppp/$PASSWORD/g" Pure.sh && chmod +x Pure.sh && ./Pure.sh				
 			;;
 		"PIA VPN")
 			echo "Running PIA VPN"
