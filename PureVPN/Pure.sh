@@ -15,10 +15,10 @@ PASSWORD='pppp'
 rm -rv /etc/openvpn >/dev/null 2>&1
 rm -v /hdd/PureVPN.zip >/dev/null 2>&1
 rm -rv /hdd/PureVPN2 >/dev/null 2>&1
-rm -rv "/hdd/linux-files" &> /dev/null 2>&1
+rm -rv "/hdd/New OVPN Files" &> /dev/null 2>&1
 mkdir -p /etc/openvpn
 
-# download and install VPN Changer
+# download and install VPN Manager
 pyv="$(python -V 2>&1)"
 echo "$pyv"
 echo $LINE

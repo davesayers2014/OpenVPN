@@ -17,11 +17,21 @@ rm -v /hdd/temp.zip >/dev/null 2>&1
 rm -rv /hdd/VyprVPN2 >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
-# Download and install VPN Changer
-echo "Installing VPN Manager"
+# download and install VPN Manager
+pyv="$(python -V 2>&1)"
+echo "$pyv"
 echo $LINE
-opkg --force-reinstall --force-overwrite install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.0.8_all.ipk?raw=true &> /dev/null 2>&1
+echo "downloading VPN Manager"
+echo $LINE
+if [[ $pyv =~ "Python 3" ]]; then
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.7-py3_all.ipk?raw=true &> /dev/null 2>&1
+else
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
+fi
+echo $LINE
 cd
+echo "Installing OpenVPN"
+echo $LINE
 
 # Install OpenVPN
 echo "Installing OpenVPN"
@@ -43,20 +53,10 @@ cd /hdd/VyprVPN2 &> /dev/null 2>&1
 rm -v ca.vyprvpn.com.crt &> /dev/null 2>&1
 
 
-# rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
-
-# Move all files into sub folders
-#for file in *; do
-#  if [[ -f "$file" ]]; then
-#    mkdir "${file%.*}"
-#    mv "$file" "${file%.*}"
-#  fi
-#done
-
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.free_mode=False' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/VyprVPN/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings

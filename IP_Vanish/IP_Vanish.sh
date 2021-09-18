@@ -19,14 +19,18 @@ rm -rv /hdd/IP_Vanish2 >/dev/null 2>&1
 mkdir -p /etc/openvpn
 mkdir -p /hdd/IP_Vanish2
 
-# Download and install VPN Changer
-# download and install VPN Changer
-echo "downloading VPN Mhanger"
+# download and install VPN Manager
+pyv="$(python -V 2>&1)"
+echo "$pyv"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
-echo "Installing VPN Mhanger"
+echo "downloading VPN Manager"
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
+if [[ $pyv =~ "Python 3" ]]; then
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.7-py3_all.ipk?raw=true &> /dev/null 2>&1
+else
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
+fi
+echo $LINE
 cd
 echo "Installing OpenVPN"
 echo $LINE
@@ -47,19 +51,6 @@ cd /hdd/IP_Vanish2
 unzip -o IP_Vanish.zip &> /dev/null 2>&1
 rm -v /hdd/IP_Vanish2/IP_Vanish.zip &> /dev/null 2>&1
 
-# rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
-
-# Move all files into sub folders
-#for file in *; do
-#  if [[ -f "$file" ]]; then
-#    mkdir "${file%.*}"
-#    mv "$file" "${file%.*}"
-#  fi
-#done
-
-# Copy cert file into sub folders
-#find /hdd/IP_Vanish -type d -exec cp /hdd/IP_Vanish/ca.ipvanish.com/ca.ipvanish.com.crt {} \; &> /dev/null 2>&1
 
 # Delete ca.ipvanish.com folder
 rm -rf /hdd/IP_Vanish2/ca.ipvanish.com &> /dev/null 2>&1
@@ -74,6 +65,7 @@ echo $LINE
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.free_mode=False' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/IP_Vanish2/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings

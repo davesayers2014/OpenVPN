@@ -18,7 +18,10 @@ rm -rv /hdd/Digibit >/dev/null 2>&1
 mkdir -p /etc/openvpn
 mkdir -p /hdd/Digibit2
 
-# download and install VPN Changer
+# download and install VPN Manager
+pyv="$(python -V 2>&1)"
+echo "$pyv"
+echo $LINE
 echo "downloading VPN Manager"
 echo $LINE
 if [[ $pyv =~ "Python 3" ]]; then
@@ -26,6 +29,9 @@ if [[ $pyv =~ "Python 3" ]]; then
 else
 	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
 fi
+echo $LINE
+cd
+echo "Installing OpenVPN"
 echo $LINE
 
 #Install OpenVPN
@@ -48,23 +54,13 @@ rm -v /hdd/Digibit2/Digibit.zip &> /dev/null 2>&1
 # replace spaces with _
 for f in *\ *; do mv "$f" "${f// /_}"; done
 
-# rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
-
-
-# Move all files into sub folders
-#for file in *; do
-#  if [[ -f "$file" ]]; then
-#    mkdir "${file%.*}"
-#    mv "$file" "${file%.*}"
-#  fi
-#done
 cd
 echo $LINE
 
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.free_mode=False' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/Digibit2/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings

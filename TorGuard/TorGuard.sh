@@ -18,13 +18,18 @@ rm -rv /hdd/TorGuard2 >/dev/null 2>&1
 rm -rv /hdd/OpenVPN-UDP >/dev/null 2>&1
 mkdir -p /etc/openvpn
 
-# download and install VPN Changer
+# download and install VPN Manager
+pyv="$(python -V 2>&1)"
+echo "$pyv"
+echo $LINE
 echo "downloading VPN Manager"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
-echo "Installing VPN Manager"
+if [[ $pyv =~ "Python 3" ]]; then
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.7-py3_all.ipk?raw=true &> /dev/null 2>&1
+else
+	opkg install https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true &> /dev/null 2>&1
+fi
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
 cd
 echo "Installing OpenVPN"
 echo $LINE
@@ -45,24 +50,11 @@ echo "Configuring OpenVPN"
 mv "/hdd/OpenVPN-UDP" /hdd/TorGuard2
 cd /hdd/TorGuard2
 
-# rename .ovpn to .conf
-#for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
-
-
-# Move all files into sub folders
-#for file in *; do
-#  if [[ -f "$file" ]]; then
-#    mkdir "${file%.*}"
-#    mv "$file" "${file%.*}"
-#  fi
-#done
-
-#find /hdd/TorGuard -type d -exec cp "/hdd/TorGuard/ca/ca.crt" {} \; &> /dev/null 2>&1
-
 # Config VPN Manager
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.free_mode=False' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/TorGuard/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings
@@ -71,8 +63,6 @@ sed -i -e "s/USERNAME/$USERNAME/g" /etc/enigma2/settings;sed -i -e "s/PASSWORD/$
 echo $LINE
 
 # Delete uneeded files 
-#rm -f /hdd/TorGuard/ca.crt >/dev/null 2>&1
-#rm -rv /hdd/TorGuard/ca >/dev/null 2>&1
 rm -f /home/root/TorGuard.sh &> /dev/null 2>&1
 init 3
 echo "OpenVPN Configs Downloaded Please Start OpenVPN"

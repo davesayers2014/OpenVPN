@@ -10,7 +10,7 @@ PASSWORD='PPPP'
 # be able to connect to your VPN.
 ################################################################
 #!/bin/bash
-# Bash Menu Script master
+# Bash Menu Script PY3
 PS3='Please enter your choice: '
 options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "IvacyVPN" "Quit")
 select opt in "${options[@]}"
@@ -18,15 +18,15 @@ do
 	case $opt in
 		"Nord VPN")
 			echo "Running Nord"
-				wget -O Nord.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/NordVPN/Nord.sh && sed -i "s/uuuu/$USERNAME/g" Nord.sh && sed -i "s/pppp/$PASSWORD/g" Nord.sh && chmod +x Nord.sh && ./Nord.sh
+				wget -O Nord.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/NordVPN/Nord.sh && sed -i "s/uuuu/$USERNAME/g" Nord.sh && sed -i "s/pppp/$PASSWORD/g" Nord.sh && chmod +x Nord.sh && ./Nord.sh
 			;;
 		"IP Vanish")
 			echo "Running IP Vanish"
-				wget -O IP_Vanish.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IP_Vanish/IP_Vanish.sh && sed -i "s/uuuu/$USERNAME/g" IP_Vanish.sh && sed -i "s/pppp/$PASSWORD/g" IP_Vanish.sh && chmod +x IP_Vanish.sh && ./IP_Vanish.sh				
+				wget -O IP_Vanish.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/IP_Vanish/IP_Vanish.sh && sed -i "s/uuuu/$USERNAME/g" IP_Vanish.sh && sed -i "s/pppp/$PASSWORD/g" IP_Vanish.sh && chmod +x IP_Vanish.sh && ./IP_Vanish.sh				
 			;;
 		"Digibit")
 			echo "Running Digibit"
-				wget -O Digibit.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/DigiBit/Digibit.sh && sed -i "s/uuuu/$USERNAME/g" Digibit.sh && sed -i "s/pppp/$PASSWORD/g" Digibit.sh && chmod +x Digibit.sh && ./Digibit.sh				
+				wget -O Digibit.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/DigiBit/Digibit.sh && sed -i "s/uuuu/$USERNAME/g" Digibit.sh && sed -i "s/pppp/$PASSWORD/g" Digibit.sh && chmod +x Digibit.sh && ./Digibit.sh				
 			;;
 		"PureVPN")
 			echo "Running PureVPN"
@@ -34,23 +34,23 @@ do
 			;;
 		"PIA VPN")
 			echo "Running PIA VPN"
-				wget -O PIA.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/PIA_VPN/PIA.sh && sed -i "s/uuuu/$USERNAME/g" PIA.sh && sed -i "s/pppp/$PASSWORD/g" PIA.sh && chmod +x PIA.sh && ./PIA.sh				
+				wget -O PIA.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/PIA_VPN/PIA.sh && sed -i "s/uuuu/$USERNAME/g" PIA.sh && sed -i "s/pppp/$PASSWORD/g" PIA.sh && chmod +x PIA.sh && ./PIA.sh				
 			;;
 		"Windscribe")
 			echo "Running Windscribe"
-				wget -O Windscribe.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/Windscribe.sh && sed -i "s/uuuu/$USERNAME/g" Windscribe.sh && sed -i "s/pppp/$PASSWORD/g" Windscribe.sh && chmod +x Windscribe.sh && ./Windscribe.sh
+				wget -O Windscribe.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/WindscribeVPN/Windscribe.sh && sed -i "s/uuuu/$USERNAME/g" Windscribe.sh && sed -i "s/pppp/$PASSWORD/g" Windscribe.sh && chmod +x Windscribe.sh && ./Windscribe.sh
 			;;
 		"SurfShark")
 			echo "Running SurfShark"
-				wget -O Surfshark.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/SurfShark/Surfshark.sh && sed -i "s/uuuu/$USERNAME/g" Surfshark.sh && sed -i "s/pppp/$PASSWORD/g" Surfshark.sh && chmod +x Surfshark.sh && ./Surfshark.sh
+				wget -O Surfshark.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/SurfShark/Surfshark.sh && sed -i "s/uuuu/$USERNAME/g" Surfshark.sh && sed -i "s/pppp/$PASSWORD/g" Surfshark.sh && chmod +x Surfshark.sh && ./Surfshark.sh
 			;;
 		"TorGuard")
 			echo "Running TorGuard"
-				wget -O TorGuard.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/TorGuard/TorGuard.sh && sed -i "s/uuuu/$USERNAME/g" TorGuard.sh && sed -i "s/pppp/$PASSWORD/g" TorGuard.sh && chmod +x TorGuard.sh && ./TorGuard.sh
+				wget -O TorGuard.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/TorGuard/TorGuard.sh && sed -i "s/uuuu/$USERNAME/g" TorGuard.sh && sed -i "s/pppp/$PASSWORD/g" TorGuard.sh && chmod +x TorGuard.sh && ./TorGuard.sh
 			;;
 		"IvacyVPN")
 			echo "Running IvacyVPN"
-				wget -O ivacyvpn.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/IvacyVPN/ivacyvpn.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
+				wget -O ivacyvpn.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/IvacyVPN/ivacyvpn.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
 			;;
 		"Quit")
 			break
