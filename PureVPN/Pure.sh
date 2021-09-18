@@ -41,19 +41,19 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /hdd/PureVPN.zip "https://s3-us-west-1.amazonaws.com/heartbleed/linux/linux-files.zip" &> /dev/null 2>&1
+wget -O /hdd/PureVPN.zip "https://s3-us-west-1.amazonaws.com/heartbleed/windows/New+OVPN+Files.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
 cd /hdd
 unzip -o PureVPN.zip &> /dev/null 2>&1
 rm -v /hdd/PureVPN.zip &> /dev/null 2>&1
-mv "/hdd/linux-files/OpenVPN_Config_Files/UDP" /hdd/PureVPN2
+mv "/hdd/linux-files/New OVPN Files/UDP" /hdd/PureVPN2
 
-for file in /hdd/PureVPN2/*.ovpn
-do
-    echo "tls-cipher "DEFAULT:@SECLEVEL=0"" >> "$file"
-done
+#for file in /hdd/PureVPN2/*.ovpn
+#do
+#    echo "tls-cipher "DEFAULT:@SECLEVEL=0"" >> "$file"
+#done
 cd
 echo $LINE
 
@@ -61,6 +61,7 @@ echo $LINE
 cd .
 init 4
 sleep 3
+sed -i '$i config.vpnmanager.free_mode=False' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.one_folder=True' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.directory=/hdd/PureVPN2/' /etc/enigma2/settings
 sed -i '$i config.vpnmanager.username=USERNAME' /etc/enigma2/settings
@@ -69,7 +70,7 @@ sed -i -e "s/USERNAME/$USERNAME/g" /etc/enigma2/settings;sed -i -e "s/PASSWORD/$
 echo $LINE
 
 # delete unneeded files
-rm -rv "/hdd/OpenVPN_Config_Files" &> /dev/null 2>&1
+rm -rv "/hdd/New OVPN Files" &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/ca.crt &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/Wdc.key &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/auth.txt &> /dev/null 2>&1
