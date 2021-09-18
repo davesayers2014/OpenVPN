@@ -19,6 +19,9 @@ rm -rv "/hdd/linux-files" &> /dev/null 2>&1
 mkdir -p /etc/openvpn
 
 # download and install VPN Changer
+pyv="$(python -V 2>&1)"
+echo "$pyv"
+echo $LINE
 echo "downloading VPN Manager"
 echo $LINE
 if [[ $pyv =~ "Python 3" ]]; then
