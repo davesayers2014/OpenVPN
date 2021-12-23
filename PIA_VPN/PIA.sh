@@ -46,7 +46,7 @@ unzip -o PIA_VPN.zip &> /dev/null 2>&1
 rm -v /hdd/PIA_VPN2/PIA_VPN.zip &> /dev/null 2>&1
 
 # replace spaces with _
-for f in *\ *; do mv "$f" "${f// /_}"; done
+#for f in *\ *; do mv "$f" "${f// /_}"; done
 
 # rename .ovpn to .conf
 #for x in *.ovpn; do mv "$x" "${x%.ovpn}.conf"; done
