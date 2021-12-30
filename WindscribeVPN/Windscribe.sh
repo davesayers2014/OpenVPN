@@ -19,12 +19,12 @@ mkdir -p /etc/openvpn
 # Download and install VPN Changer
 echo "downloading VPN Changer"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing VPN Changer"
 echo $LINE
 opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnchanger_1.1.0_all.ipk &> /dev/null 2>&1
 cd
-wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/plugin.py" &> /dev/null 2>&1
+wget -O /usr/lib/enigma2/python/Plugins/Extensions/VpnChanger/plugin.py "https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/WindscribeVPN/plugin.py" &> /dev/null 2>&1
 
 # Install OpenVPN
 echo "Installing OpenVPN"
@@ -35,8 +35,8 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/login.conf" &> /dev/null 2>&1
-wget -O /hdd/Windscribe.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/WindscribeVPN/Windscribe.zip" &> /dev/null 2>&1
+wget -O /tmp/auth.txt "https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/login.conf" &> /dev/null 2>&1
+wget -O /hdd/Windscribe.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/WindscribeVPN/Windscribe.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"

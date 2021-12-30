@@ -19,10 +19,10 @@ mkdir -p /etc/openvpn
 # download and install VPN Changer
 echo "downloading VPN Changer"
 echo $LINE
-cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/master/enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk?raw=true" &> /dev/null 2>&1
+cd /var && cd /var/volatile && cd /var/volatile/tmp && wget -O /var/volatile/tmp/enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk "https://github.com/davesayers2014/OpenVPN/blob/PY3/enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk?raw=true" &> /dev/null 2>&1
 echo "Installing VPN Changer"
 echo $LINE
-opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.3_all.ipk &> /dev/null 2>&1
+opkg --force-reinstall --force-overwrite install enigma2-plugin-extensions-vpnmanager_1.1.4_all.ipk &> /dev/null 2>&1
 cd
 echo "Installing OpenVPN"
 echo $LINE
@@ -34,7 +34,7 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /hdd/LTVPN.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/master/LTVPN/LTVPN.zip" &> /dev/null 2>&1
+wget -O /hdd/LTVPN.zip "https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/LTVPN/LTVPN.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
