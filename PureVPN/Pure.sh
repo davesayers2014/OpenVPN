@@ -41,7 +41,7 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /hdd/PureVPN.zip "https://s3-us-west-1.amazonaws.com/heartbleed/windows/New+OVPN+Files.zip" &> /dev/null 2>&1
+wget -O /hdd/PureVPN.zip "https://d32d3g1fvkpl8y.cloudfront.net/heartbleed/windows/New+OVPN+Files.zip" &> /dev/null 2>&1
 
 # Configure VPN
 echo "Configuring OpenVPN"
