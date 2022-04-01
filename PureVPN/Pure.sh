@@ -48,12 +48,9 @@ echo "Configuring OpenVPN"
 cd /hdd
 unzip -o PureVPN.zip &> /dev/null 2>&1
 rm -v /hdd/PureVPN.zip &> /dev/null 2>&1
-mv "/hdd/New+OVPN+Files/UDP" /hdd/PureVPN2
+mv "/hdd/New OVPN Files/New+OVPN+Files/UDP" /hdd/PureVPN2
 
-#for file in /hdd/PureVPN2/*.ovpn
-#do
-#    echo "tls-cipher "DEFAULT:@SECLEVEL=0"" >> "$file"
-#done
+
 cd
 echo $LINE
 
@@ -70,7 +67,7 @@ sed -i -e "s/USERNAME/$USERNAME/g" /etc/enigma2/settings;sed -i -e "s/PASSWORD/$
 echo $LINE
 
 # delete unneeded files
-rm -rv "/hdd/New OVPN Files" &> /dev/null 2>&1
+rm -rv "/hdd/New+OVPN+Files" &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/ca.crt &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/Wdc.key &> /dev/null 2>&1
 #rm -f /hdd/PureVPN/auth.txt &> /dev/null 2>&1
