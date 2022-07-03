@@ -40,9 +40,10 @@ wget -O /hdd/Windscribe.zip "https://raw.githubusercontent.com/davesayers2014/Op
 
 # Configure VPN
 echo "Configuring OpenVPN"
-cd /hdd
+mkdir -p /etc/openvpn/Windscribe
+cd /hdd/Windscribe
 unzip -o Windscribe.zip &> /dev/null 2>&1
-rm -v /hdd/Windscribe.zip &> /dev/null 2>&1
+rm -v /hdd/Windscribe/Windscribe.zip &> /dev/null 2>&1
 cd /hdd/Windscribe &> /dev/null 2>&1
 
 
