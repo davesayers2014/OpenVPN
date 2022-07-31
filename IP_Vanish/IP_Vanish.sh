@@ -43,7 +43,7 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-wget -O /hdd/IP_Vanish2/IP_Vanish.zip "https://www.ipvanish.com/software/configs/configs.zip" &> /dev/null 2>&1
+wget -O /hdd/IP_Vanish2/IP_Vanish.zip "https://configs.ipvanish.com/configs/configs.zip" &> /dev/null 2>&1
 
 #Configure VPN files
 echo "Configuring OpenVPN"
