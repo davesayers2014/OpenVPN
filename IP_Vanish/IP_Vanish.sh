@@ -51,6 +51,10 @@ cd /hdd/IP_Vanish2
 unzip -o IP_Vanish.zip &> /dev/null 2>&1
 rm -v /hdd/IP_Vanish2/IP_Vanish.zip &> /dev/null 2>&1
 
+sed -i 's/comp-lzo/auth-nocache/g' *.ovpn
+
+find /hdd/IP_Vanish2 -name "*.ovpn" -type f | xargs sed -i -e '/keysize 256/d'
+
 
 # Delete ca.ipvanish.com folder
 rm -rf /hdd/IP_Vanish2/ca.ipvanish.com &> /dev/null 2>&1
