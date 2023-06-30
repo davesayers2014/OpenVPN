@@ -39,11 +39,12 @@ opkg update &> /dev/null 2>&1
 opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 
 # Download VPN Configs
+opkg install unrar &> /dev/null 2>&1
 echo "Downloading OpenVPN Configs"
 echo $LINE
 cd /hdd/
-wget "https://support.ivacy.com/wp-content/uploads/2018/09/OpenVPN-Configs.zip" -O /hdd/tmp.zip; unzip /hdd/tmp.zip; rm /hdd/tmp.zip &> /dev/null 2>&1
-mv /hdd/OpenVPN-Configs /hdd/ivacyvpn2 &> /dev/null 2>&1
+mkdir -p /hdd/ivacyvpn2
+wget "https://ivacy.s3.amazonaws.com/support/OpenVPN-Configs-with-certificate.rar" -O /hdd/tmp.rar; unrar e /hdd/tmp.rar /hdd/ivacyvpn2; rm /hdd/tmp.zip &> /dev/null 2>&1
 
 cd
 
