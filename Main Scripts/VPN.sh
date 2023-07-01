@@ -54,7 +54,7 @@ do
 			;;
 		"FastestVPN")
 			echo "Running FastestVPN"
-				wget -O ivacyvpn.sh https://github.com/davesayers2014/OpenVPN/raw/PY3/FastestVPN/FastestVPN.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
+				wget -O fastestvpn.sh https://github.com/davesayers2014/OpenVPN/raw/PY3/FastestVPN/FastestVPN.sh && sed -i "s/uuuu/$USERNAME/g" fastestvpn.sh && sed -i "s/pppp/$PASSWORD/g" fastestvpn.sh && chmod +x fastestvpn.sh && ./fastestvpn.sh
 			;;
 		"Quit")
 			break
