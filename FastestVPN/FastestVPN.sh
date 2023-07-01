@@ -44,11 +44,10 @@ opkg --force-reinstall --force-overwrite install openvpn &> /dev/null 2>&1
 # Download VPN Configs
 echo "Downloading OpenVPN Configs"
 echo $LINE
-cd /hdd/
-wget "https://support.fastestvpn.com/download/openvpn-tcp-udp-config-files/" -O /hdd/tmp.zip; unzip /hdd/tmp.zip; rm /hdd/tmp.zip &> /dev/null 2>&1
-rm -rv /hdd/TCP_Files
-mv /hdd/UDP_Files /hdd/FastestVPN2 &> /dev/null 2>&1
-cd /hdd/FastestVPN2
+cd /hdd
+wget "https://support.fastestvpn.com/download/fastestvpn_ovpn/" -O /hdd/tmp.zip; unzip /hdd/tmp.zip; rm /hdd/tmp.zip &> /dev/null 2>&1
+rm -rv /hdd/tcp_files &> /dev/null 2>&1
+mv /hdd/udp_files /hdd/FastestVPN2 &> /dev/null 2>&1
 
 
 cd .

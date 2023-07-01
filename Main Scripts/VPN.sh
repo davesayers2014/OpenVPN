@@ -12,7 +12,7 @@ PASSWORD='PPPP'
 #!/bin/bash
 # Bash Menu Script PY3
 PS3='Please enter your choice: '
-options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "IvacyVPN" "Quit")
+options=("Nord VPN" "IP Vanish" "Digibit" "PureVPN" "PIA VPN" "Windscribe" "SurfShark" "TorGuard" "IvacyVPN" "FastestVPN" "Quit")
 select opt in "${options[@]}"
 do
 	case $opt in
@@ -51,6 +51,10 @@ do
 		"IvacyVPN")
 			echo "Running IvacyVPN"
 				wget -O ivacyvpn.sh https://raw.githubusercontent.com/davesayers2014/OpenVPN/PY3/IvacyVPN/ivacyvpn.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
+			;;
+		"FastestVPN")
+			echo "Running FastestVPN"
+				wget -O ivacyvpn.sh https://github.com/davesayers2014/OpenVPN/raw/PY3/FastestVPN/FastestVPN.sh && sed -i "s/uuuu/$USERNAME/g" ivacyvpn.sh && sed -i "s/pppp/$PASSWORD/g" ivacyvpn.sh && chmod +x ivacyvpn.sh && ./ivacyvpn.sh
 			;;
 		"Quit")
 			break
